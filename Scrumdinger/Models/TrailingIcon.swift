@@ -1,8 +1,15 @@
-//
-//  TrailingIcon.swift
-//  Scrumdinger
-//
-//  Created by Lopes, Olivia on 3/12/24.
-//
+//stylistic elements of label
+import SwiftUI
 
-import Foundation
+struct TrailingIcon: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.title
+            configuration.icon
+        }
+    }
+}
+
+extension LabelStyle where Self == TrailingIcon {
+    static var trailingIcon: Self { Self()}
+}
